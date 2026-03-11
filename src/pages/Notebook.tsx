@@ -42,32 +42,29 @@ const Notebook = () => {
       return;
     }
 
-    fetchData(userId);
+    fetchData(userId, true);
 
-    // auto refresh every 2 seconds
     const interval = setInterval(() => {
-      fetchData(userId);
+      fetchData(userId, false);
     }, 2000);
 
     return () => clearInterval(interval);
 
   }, []);
 
-  const fetchData = async (userId: string) => {
+  const fetchData = async (userId: string, firstLoad = false) => {
 
     try {
 
-      setLoading(true);
+      if (firstLoad) {
+        setLoading(true);
+      }
 
-      // Login History
       const loginRes = await fetch(`http://127.0.0.1:5000/login-history/${userId}`);
       const loginData = await loginRes.json();
 
-      // Prediction History
       const predRes = await fetch(`http://127.0.0.1:5000/prediction-history/${userId}`);
       const predData = await predRes.json();
-
-      console.log("Prediction history:", predData);
 
       setLoginHistory(Array.isArray(loginData) ? loginData : []);
       setPredictions(Array.isArray(predData) ? predData : []);
@@ -76,12 +73,11 @@ const Notebook = () => {
 
       console.error("Error fetching data:", error);
 
-      setLoginHistory([]);
-      setPredictions([]);
-
     } finally {
 
-      setLoading(false);
+      if (firstLoad) {
+        setLoading(false);
+      }
 
     }
 
