@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 210 50% 10%;
+    --foreground: 200 20% 95%;
+
+    --card: 210 45% 15%;
+    --card-foreground: 200 20% 95%;
+
+    --card-peach: 210 15% 25%;
+    --card-peach-foreground: 210 10% 90%;
+
+    --popover: 210 45% 18%;
+    --popover-foreground: 200 20% 95%;
+
+    --primary: 185 80% 50%;
+    --primary-foreground: 210 50% 10%;
+
+    --secondary: 210 40% 22%;
+    --secondary-foreground: 200 20% 90%;
+
+    --muted: 210 35% 20%;
+    --muted-foreground: 200 15% 65%;
+
+    --accent: 185 60% 25%;
+    --accent-foreground: 185 80% 70%;
+
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 30% 25%;
+    --input: 210 35% 20%;
+    --ring: 185 80% 50%;
+
+    --radius: 0.75rem;
+
+    --gradient-primary: linear-gradient(135deg, hsl(185, 80%, 50%), hsl(200, 70%, 55%));
+    --gradient-card: linear-gradient(135deg, hsl(210, 45%, 15%), hsl(210, 50%, 12%));
+    --shadow-glow: 0 0 40px hsla(185, 80%, 50%, 0.3);
+    
+    --sidebar-background: 210 45% 12%;
+    --sidebar-foreground: 200 20% 95%;
+    --sidebar-primary: 185 80% 50%;
+    --sidebar-primary-foreground: 210 50% 10%;
+    --sidebar-accent: 210 40% 22%;
+    --sidebar-accent-foreground: 200 20% 90%;
+    --sidebar-border: 210 30% 25%;
+    --sidebar-ring: 185 80% 50%;
+
+    --chart-1: 185 80% 50%;
+    --chart-2: 160 70% 45%;
+    --chart-3: 200 70% 55%;
+    --chart-4: 170 65% 50%;
+    --chart-5: 190 75% 45%;
+  }
+
+  .dark {
+    --background: 210 50% 10%;
+    --foreground: 200 20% 95%;
+
+    --card: 210 45% 15%;
+    --card-foreground: 200 20% 95%;
+
+    --card-peach: 210 15% 25%;
+    --card-peach-foreground: 210 10% 90%;
+
+    --popover: 210 45% 18%;
+    --popover-foreground: 200 20% 95%;
+
+    --primary: 185 80% 50%;
+    --primary-foreground: 210 50% 10%;
+
+    --secondary: 210 40% 22%;
+    --secondary-foreground: 200 20% 90%;
+
+    --muted: 210 35% 20%;
+    --muted-foreground: 200 15% 65%;
+
+    --accent: 185 60% 25%;
+    --accent-foreground: 185 80% 70%;
+
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 30% 25%;
+    --input: 210 35% 20%;
+    --ring: 185 80% 50%;
+
+    --sidebar-background: 210 45% 12%;
+    --sidebar-foreground: 200 20% 95%;
+    --sidebar-primary: 185 80% 50%;
+    --sidebar-primary-foreground: 210 50% 10%;
+    --sidebar-accent: 210 40% 22%;
+    --sidebar-accent-foreground: 200 20% 90%;
+    --sidebar-border: 210 30% 25%;
+    --sidebar-ring: 185 80% 50%;
+
+    --chart-1: 185 80% 50%;
+    --chart-2: 160 70% 45%;
+    --chart-3: 200 70% 55%;
+    --chart-4: 170 65% 50%;
+    --chart-5: 190 75% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
